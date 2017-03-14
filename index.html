@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue App</title>
+</head>
+<body>
+	<div id="cobby">
+		<p>{{name}}</p>
+		<input type="text" v-model="name" name=""><br>
+	<button v-on:click="addAmigo" >Add Friend</button>
+	<hr>
+	<p>My friends are:</p>
+	<ul>
+		<li v-for="amigo in amigos">{{amigo}} </li>
+	</ul>
+	</div>
+
+</body>
+<script src="vue.js"></script>
+<script>
+	var abc = new Vue({
+		el:'#cobby',
+		data:{
+			name:'',
+			amigos:['Ben','Joe','Amy','Jane']
+		},
+		methods:{
+			sayHello:function(){
+				alert("Ben");
+			},
+			addAmigo(){
+				this.amigos.push(this.name);
+			}
+		}
+	});
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
